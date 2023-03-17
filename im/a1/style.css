@@ -14,7 +14,7 @@ p {
   }
 
 h1 {
-    font-size: 50px;
+    font-size: 75px;
     align-self: center;
 }
 
@@ -40,10 +40,6 @@ ol {
 a {
     color: rgba(255, 255, 255, 1);
     font-size: 25px;
-}
-
-.img {
-    align-self: center;
 }
 
 .pic_pos {
