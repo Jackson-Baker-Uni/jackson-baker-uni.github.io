@@ -1,0 +1,300 @@
+*{
+    box-sizing: border-box;
+    margin: 1%;
+}
+
+/* Here are some colours which I selected for the middle of the boxes to best mimic the colours of the comic reference 'Hedra'. I chose to uses these colours as they best represent the colours found in the colour pallete of the reference comic. */
+:root{
+    --col01: rgb(248, 155, 68);
+    --col02: rgb(164, 161, 155);
+    --col03: rgb(204, 204, 204);
+    --col04: rgb(210, 209, 209);
+    color: rgba(255, 255, 255, 0);
+}
+
+/* Here you can see a 5x7 grid has been created to mimic the layout of the reference comic titled 'Hedra'. I chose to use a 5x7 grid as that is the layout of the refence and the background colour is white to also mimic the referece. */
+#box{
+    display: grid;
+    height: 133vh;
+    width: 100vh;
+    background-color: rgb(255, 255, 255);
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+/* Most of the boxes have their own colours to represent the pannels of the comic they are going to be used for */
+/* Box to be placed at the top left of the comic */
+#box1{
+    background-image: radial-gradient(rgb(246, 169, 88) 15%, rgb(165, 163, 157) 45%);
+    border-left: 2.5px;
+    border-right: 0px;
+    border-top: 2.5px;
+    border-bottom: 0px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with a curved border at the top right */
+#boxtr{
+    background-color: var(--col02);
+    border-top-right-radius: 100px;
+    border-left: 0px;
+    border-right: 2.5px;
+    border-top: 2.5px;
+    border-bottom: 0px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with a curved border at the top right when the main character is in the box */
+#boxtr2{
+    background-image: linear-gradient(to left, rgb(255, 123, 0) 35%, rgb(165, 163, 157) 50%);
+    border-top-right-radius: 100px;
+    border-left: 0px;
+    border-right: 2.5px;
+    border-top: 2.5px;
+    border-bottom: 0px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with a curved border at the top right when athe enemy is in the box */
+#boxtr3{
+    background-image: radial-gradient( rgb(255, 123, 0) 25%, rgb(165, 163, 157) 60%);
+    border-top-right-radius: 100px;
+    border-left: 0px;
+    border-right: 2.5px;
+    border-top: 2.5px;
+    border-bottom: 0px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with a curved border at the top right showing the escape */
+#boxtr4{
+    background-color: var(--col03);
+    border-top-right-radius: 100px;
+    border-left: 0px;
+    border-right: 2.5px;
+    border-top: 2.5px;
+    border-bottom: 0px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with a curved border at the top left and the main character on the left */
+#boxtl{
+    background-image: linear-gradient(to right, rgb(246, 169, 88) 35%, rgb(165, 163, 157) 70%);
+    border-top-left-radius: 100px;
+    border-left: 2.5px;
+    border-right: 0px;
+    border-top: 2.5px;
+    border-bottom: 0px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with a curved border at the top left and the main character in the middle */
+#boxtl2{
+    background-image: radial-gradient(rgb(246, 169, 88) 15%, rgb(165, 163, 157) 45%);
+    border-top-left-radius: 100px;
+    border-left: 2.5px;
+    border-right: 0px;
+    border-top: 2.5px;
+    border-bottom: 0px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with a curved border at the top left and the enemy in the middle */
+#boxtl3{
+    background-image: radial-gradient(rgb(247, 139, 22) 15%, rgb(165, 163, 157) 45%);
+    border-top-left-radius: 100px;
+    border-left: 2.5px;
+    border-right: 0px;
+    border-top: 2.5px;
+    border-bottom: 0px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with a curved border at the bottom right and the character in frame */
+#boxbr{
+    background-image: radial-gradient(rgb(246, 169, 88) 15%, rgb(198, 197, 194) 45%);
+    border-bottom-right-radius: 100px;
+    border-left: 0px;
+    border-right: 2.5px;
+    border-top: 0px;
+    border-bottom: 2.5px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with a curved border at the bottom left */
+#boxbl{
+    background-color: var(--col02);
+    border-bottom-left-radius: 100px;
+    border-left: 2.5px;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 2.5px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with a curved border at the bottom left with a lighter colour */
+#boxbl2{
+    background-color: var(--col03);
+    border-bottom-left-radius: 100px;
+    border-left: 2.5px;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 2.5px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with a curved border at the bottom left with the main character in frame */
+#boxbl3{
+    background-image: radial-gradient( rgb(250, 159, 73) 25%, rgb(165, 163, 157) 60%);
+    border-bottom-left-radius: 100px;
+    border-left: 2.5px;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 2.5px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with a curved border at the bottom left with the main character in frame and a lighter background colour */
+#boxbl4{
+    background-image: radial-gradient( rgb(250, 159, 73) 15%, rgb(202, 201, 198) 40%);
+    border-bottom-left-radius: 100px;
+    border-left: 2.5px;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 2.5px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with the left edge bold */
+#boxl{
+    background-image: linear-gradient(to left, rgb(225, 224, 223) 20%, rgb(165, 163, 157) 50%);
+    border-left: 2.5px;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with the rigth edge bold */
+#boxr{
+    background-color: var(--col04);
+    border-left: 0px;
+    border-right: 2.5px;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with the top edge bold */
+#boxt{
+    background-color: var(--col03);
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 2.5px;
+    border-bottom: 0px;
+    border-color: black;
+    border-style: solid;
+}
+
+ /* Boxes to be placed with the bottom edge bold */
+#boxb{
+    background-color: var(--col02);
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 2.5px;
+    border-color: black;
+    border-style: solid;
+}
+
+ /* Boxes to be placed with the bottom edge bold and the main character in frame */
+ #boxb2{
+    background-image: radial-gradient(rgb(246, 169, 88) 15%, rgb(198, 197, 194)45%);
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 2.5px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with no edges bold */
+#boxm{
+    background-color: var(--col04);
+}
+
+/* Boxes to be placed with no edges bold but a character is in the frame*/
+#boxm1{
+    background-image: radial-gradient(rgb(246, 169, 88) 15%, white 45%);
+}
+
+
+/* Boxes to be placed with the left and right edges bold and the character is in frame */
+#boxv{
+    background-image: radial-gradient(rgb(246, 169, 88) 15%, rgb(192, 190, 190) 45%);
+    border-left: 2.5px;
+    border-right: 2.5px;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with the left and right edges bold and the enemy is in frame */
+#boxv2{
+    background-image: radial-gradient(rgb(236, 134, 25) 25%, rgb(209, 206, 206) 65%);
+    border-left: 2.5px;
+    border-right: 2.5px;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with the left and right edges bold and the character is climbing downwards */
+#boxv3{
+    background-image: linear-gradient(to right, rgb(191, 190, 188) 5%, rgb(246, 169, 88) 50%, rgb(191, 190, 188) 95%);
+    border-left: 2.5px;
+    border-right: 2.5px;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with the top and bottom edges bold and the main character is in frame*/
+#boxh{
+    background-image: radial-gradient(rgb(246, 169, 88) 10%, rgb(205, 204, 201) 40%);
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 2.5px;
+    border-bottom: 2.5px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Boxes to be placed with the top and bottom edges bold but the main character is smaller in frame */
+#boxh2{
+    background-image: radial-gradient(rgb(246, 169, 88) 25%, rgb(184, 183, 180) 60%);
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 2.5px;
+    border-bottom: 2.5px;
+    border-color: black;
+    border-style: solid;
+}
