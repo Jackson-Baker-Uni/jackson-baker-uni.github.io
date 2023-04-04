@@ -1,0 +1,72 @@
+/* z-index order */
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+/* I changed the 4 colours to a white for the background, grey for the text, red for the selected filter's text and blue for the link's text. */
+:root{
+  --col-01:#ffffff;
+  --col-02:#464646;
+  --col-03:#ff0000;
+  --col-04:#3e92ff;
+  --border: 2px solid var(--col-02);
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--col-01);
+  color: var(--col-02);
+  padding: 2vw;
+  font-family: 'Alkatra', cursive;
+}
+
+.RecipeBox{
+  display: flex;
+  flex-direction: column;
+  border: var(--border);
+  border-style: dashed;
+  margin-bottom: 10px;
+}
+
+.recipe-title {
+  color: var(--col-02);
+  font-size: 35px;
+  font:bolder
+}
+
+.sort-title {
+  color: var(--col-02);
+  font-size: 35px;
+  font:bolder
+}
+
+.title {
+  color: var(--col-02);
+  font-size: 45px;
+  font:bolder
+}
+
+.link {
+  color: var(--col-04);
+  font-size: 15px;
+}
+
+.text {
+  color: var(--col-02);
+  font-size: 17px;
+  padding: 1%;
+}
+
+.SelectedFilter{
+  color: var(--col-03);
+}
+
+.Img1{
+  position: relative;
+  bottom: 200px;
+  right: -600px;
+}
