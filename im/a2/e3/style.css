@@ -1,0 +1,220 @@
+/*
+  This one CSS file is imported into both index.html AND hosono.html so you need to be careful that it 
+  works for both.
+*/
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+:root{
+  /* first two colours come from Kuroi's Manga Pallete Palette */
+  /* https://lospec.com/palette-list/manga-pallete */
+  --col-01:#171219;
+  --col-02:#f2fbeb;
+  --col-03:#5252ff;
+  --col-04:#b6e878;
+  font-size: 16px;
+  /* scroll behaviour makes the <a> links to ids scroll to position over time rather than immediately */
+  scroll-behavior: smooth;
+}
+ 
+body{
+  padding: 1rem;
+  background-color: var(--col-02);
+  color: var(--col-01);
+  transition: 0.5s;
+}
+
+/* I added the trainstion time of 0.5 seconds as it seemed like a fast enough transition time but also did not blind the user, making it an easy transtion time to look at. 
+this transition time lets the swap between dark mode and light mode effective and is a very clear indicator as to what it does too because of this time. */
+
+nav {
+  margin-top: 1rem;
+}
+
+nav li{
+  font-size: 1rem;
+}
+
+section{
+  margin-bottom: 2rem;
+}
+
+h1{
+  font-size: 3rem;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+p{
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+figcaption{
+  width: fit-content;
+}
+
+dl ul{
+  margin-bottom: 0;
+}
+
+li{
+  font-size: 1rem;
+}
+
+li:hover{
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+li a:hover{
+  cursor: pointer;
+  color: rgb(90, 90, 90);
+  background-color: rgb(216, 216, 216);
+  border-radius: 25px;
+  padding: 0.25%;
+}
+
+/* above you css which allows for changes in the titles to change when you hover over the titles. this is done to make it clear that you can click them.
+a border apears around them showing they are buttons as well as the cursor changing to a pointer and the text changing color. I decided to not have anything happen when
+you click the text as the page scrolls */
+
+a{
+  transition: 0.5s;
+}
+ /* I also put the transtiton time here too so the text in the headings transitions at the same time as the rest of the text. otherwise it changed imediately */
+
+dd{
+  padding-left: 60px;
+}
+
+li ul{
+  padding-left: 40px;
+}
+
+.img-wrapper{
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.img-figure{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-img{
+  width: 80%;
+}
+
+.res-columns{
+  column-width: 25rem;
+}
+
+#mode-button{
+  float: right;
+  /* note the use of position: sticky to keep the button on the page even with scrolling */
+  position: sticky;
+  top: 1rem;
+}
+
+#mode-button:hover{
+  cursor: pointer;
+  background-color: rgb(143, 143, 143);
+  border-radius: 25px;
+}
+
+/* code for loading page */
+
+#load-body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* changing button to look like a link */
+#load-link{
+  line-height: 1rem;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+#load-link:hover{
+color: rgb(90, 90, 90);
+background-color: rgb(205, 205, 205);
+}
+
+/* This here makes it so when you hover ove the text to go to the site it makes a button apear which is then clearer to click. it also changes the cursor to a pointer
+as you can see in the load-link tag above which futher makes it clear that the button can be clicked */ 
+
+/* throbber while page is fake loading */
+#load-throbber{
+  /* the width, height and background-color give it a shape on the page without any content inside - 
+  these value are arbitrary, please change to create your own design  */
+  width: 25%;
+  height: 1rem;
+  background-color: var(--col-03);
+  /* we also initially set display to none so it only shows once the link is clicked */
+  display: none;
+  border-radius: 25px;
+  background-image: linear-gradient(90deg, red 5%, orange 10%, yellow 15%, greenyellow 20%, rgb(42, 253, 42) 25%, rgb(0, 255, 213) 30%, rgb(0, 110, 255) 35%, rgb(25, 0, 255) 40%, rgb(217, 0, 255) 45%, rgb(255, 55, 139) 50%, red 55%, orange 60%, yellow 65%, greenyellow 70%, rgb(42, 253, 42) 75%, rgb(0, 255, 213) 80%, rgb(0, 110, 255) 85%, rgb(25, 0, 255) 90%, rgb(217, 0, 255) 95%, rgb(255, 55, 139) 100%);
+  background-size: 1000%;
+  animation: rotate 10.1s;
+}
+
+@keyframes rotate {
+  0% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position-x: 100%;
+  }
+}
+
+/* above are some details about what happens when you click the button to take you to the next site. first a rainbow loading bar apears which using the different 
+gradients and keyframes makes the color scroll horizontally implying that there is progress loading the site. I also made the animation go for 10.1 seconds rather
+than the 10 seconds it takes to move onto the next slide so the throbber does not disapear or restart before the next slide apears.  */
+
+/* Media Queries */
+
+/* medium devices 600 - 992 */
+@media only screen and (min-width: 600px) {
+  :root{
+    font-size: 20px;
+  }
+  
+  .img-wrapper{
+    width: 75%;
+    margin: 1.5rem auto;
+  }
+
+}
+
+/* medium devices 992 + */
+@media only screen and (min-width: 992px) {
+  :root{
+    font-size: 24px;
+  }
+
+  .img-wrapper{
+    max-width: fit-content;
+    float: right;
+    margin: 1.5rem;
+  }
+
+}
+
+@media (prefers-reduced-motion) {
+  :root{
+    scroll-behavior: auto;
+  }
+}
