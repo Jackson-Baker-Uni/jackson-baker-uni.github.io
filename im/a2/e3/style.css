@@ -14,13 +14,16 @@
   /* https://lospec.com/palette-list/manga-pallete */
   --col-01:#171219;
   --col-02:#f2fbeb;
-  --col-03:#5252ff;
+  --col-03:#528cff;
   --col-04:#b6e878;
   font-size: 16px;
   /* scroll behaviour makes the <a> links to ids scroll to position over time rather than immediately */
   scroll-behavior: smooth;
 }
  
+/* the use of smooth scroll also creates a visual indicator that the site is working and going to the correct section when a heading link is clicked. this also shows
+the user where the content is located on the page whether it is far down the page or nearer to the top. */
+
 body{
   padding: 1rem;
   background-color: var(--col-02);
@@ -29,7 +32,8 @@ body{
 }
 
 /* I added the trainstion time of 0.5 seconds as it seemed like a fast enough transition time but also did not blind the user, making it an easy transtion time to look at. 
-this transition time lets the swap between dark mode and light mode effective and is a very clear indicator as to what it does too because of this time. */
+this transition time lets the swap between dark mode and light mode effective and is a very clear indicator as to what it does too because of this time. the use of 
+a button which lets the user change between light and dark mode is an example of user agency over the site and allows for a better catered user experince. */
 
 nav {
   margin-top: 1rem;
@@ -73,6 +77,10 @@ li:hover{
   border-radius: 25px;
 }
 
+/* above is code which changes the cursor to a pointer when you hover over the headings to show that they can be clicked and interacted with. this is done to show the user
+that not only can this be clicked but there will be feedback when the link is clicked in the form of the website scrolling down the page. if not, the user may be
+unsure of what can and cannot be clicked, leading to a confusing and unclear heading format. */
+
 li a:hover{
   cursor: pointer;
   color: rgb(90, 90, 90);
@@ -81,14 +89,15 @@ li a:hover{
   padding: 0.25%;
 }
 
-/* above you css which allows for changes in the titles to change when you hover over the titles. this is done to make it clear that you can click them.
+/* above is css which allows for changes in the titles to change when you hover over the titles. this is done to make it clear that you can click them.
 a border apears around them showing they are buttons as well as the cursor changing to a pointer and the text changing color. I decided to not have anything happen when
 you click the text as the page scrolls */
 
 a{
   transition: 0.5s;
 }
- /* I also put the transtiton time here too so the text in the headings transitions at the same time as the rest of the text. otherwise it changed imediately */
+ /* I also put the transtiton time here too so the text in the headings transitions at the same time as the rest of the text. otherwise it changed imediately which can
+ be jarring to the user and does not create a very good sense of unity with the rest of the website. */
 
 dd{
   padding-left: 60px;
@@ -130,6 +139,13 @@ li ul{
   border-radius: 25px;
 }
 
+/* above is code to change the background colour of the button to a colour which stands out from the background to create a clear distiction between what is a button
+and what is the background. this also draws the users eye towards the button and makes it clear that it is something that can be interacted wtih. the text inside the
+button also tells the user what the button does rather than simply having a blank button which could do anything to the site from the users' point of view. 
+In terms of the colour choice, i chose this grey as it works as a middle ground between the black and white backgronds which change between dark and light mode
+respectively. this allows for the text to also stand out whether it is black or white and this colour also goes well with the theme of the site, thus creating unity
+between the button and website.*/
+
 /* code for loading page */
 
 #load-body{
@@ -147,6 +163,9 @@ li ul{
   cursor: pointer;
   border-radius: 25px;
 }
+
+/* this above also turns the cursor into a pointer to show the user that this can be clicked and will do something when it is clicked, similarly to the other interactive
+links on the site. */
 
 #load-link:hover{
 color: rgb(90, 90, 90);
@@ -181,8 +200,12 @@ as you can see in the load-link tag above which futher makes it clear that the b
 }
 
 /* above are some details about what happens when you click the button to take you to the next site. first a rainbow loading bar apears which using the different 
-gradients and keyframes makes the color scroll horizontally implying that there is progress loading the site. I also made the animation go for 10.1 seconds rather
-than the 10 seconds it takes to move onto the next slide so the throbber does not disapear or restart before the next slide apears.  */
+gradients and keyframes makes the color scroll horizontally implying that there is progress loading the site. I chose to make the throbber be a horizontal loading
+bar as it is a common form that a loading bar takes, making it clear to the user what it is.  I also made the animation go for 10.1 seconds rather
+than the 10 seconds it takes to move onto the next slide so the throbber does not disapear or restart before the next slide apears. this was all done to imply that
+the page was loading when in reality it was simply waiting to load the next page. creating the loading bar allows for some visual indication for the user and also
+creates a distraction while the site is 'loading' rather than nothing happening. if there was nothing happening, the user may click off the site or reload it because
+they may think that something has gone wrong or that the button does nothing. */
 
 /* Media Queries */
 
