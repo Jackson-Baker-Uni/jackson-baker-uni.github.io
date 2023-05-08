@@ -1,0 +1,165 @@
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  background-color: #ffffff;
+  margin: 0;
+}
+/* Above I changed the background colour of the page to white. I white as white is a conventional colour for websites like youtube and vinemo. as well as this, it aslo
+goes with the aesthetic and colour choices i made for the rest of the website. */
+ 
+/* Basis for colour palette comes from 1bit Monitor Glow Palette by Polyducks */
+/* https://lospec.com/palette-list/1bit-monitor-glow */
+/* you're welcome to change the colours if you want or any of the other general page style */
+:root{
+  --col-01:#fc1919;
+  --col-02:#f0f6f0;
+  --col-03:#707070;
+  --col-04:#ff7272;
+  --col-05:#b5b5b5;
+  --border: 1px solid var(--col-02);
+}
+/* above I changed the default colours so I did not have to copy and paste other colours throughout the css and can instead call on these colours. */
+
+.video-player-wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  margin: 2rem auto;
+}
+
+/* I changed the width of the video player to take up 75% of the screen rather than 50%. I did this as there was a lot of empty space and this percentage filled up the 
+screen better and made for a better viewing experience. */
+
+/* becuase I want to overlay the play icon on the video they need to be in their own wrapper */
+.video-element-wrapper{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+#videoElement{
+  width: 100%;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+#videoPlayOverlay{
+  width: 8rem;
+  height: 8rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: center;
+  align-self: center;
+  opacity: 0.6;
+  display: none;
+}
+
+.video-controls-wrapper{
+  display: flex;
+  justify-content: center;
+}
+/* this overwrites the above display:flex - something which is then undone when the JS loads */
+#controlsWrapper{
+  display: none;
+}
+
+.video-control-button{
+  width: 2rem;
+  height: 2rem;
+  padding: .1rem;
+  border: none;
+  cursor: pointer;
+}
+.video-control-button:hover{
+  background-color: var(--col-05);
+}
+
+/* I changed the background colour of the buttons when hovering to be a light grey. I chose this colour as it stood out from the background while still creating a 
+distinction between this colour and the colour of the icon. */
+
+.video-control-button:active{
+  background-color: var(--col-04);
+}
+/* This is the background colour of the icon when it is being clicked/held down by the mouse. It is a lightred colour. I chose this colour for a couple of reasons.
+the first of these is because it goes well with the colour pallate i chose of the video timeline bar and secondly it is a distint colour from the grey and shows the
+user that the button has been clicked. I could have shown this to the user simply by the change in icon, but this is a more clear and effective way of showing the user that
+the button has bee clicked. */
+
+.button-icon{
+  pointer-events: none;
+}
+
+#playButton{
+  background-image: url('./icons/play.svg');
+}
+
+
+
+#muteButton{
+  background-image: url('./icons/mute.svg');
+}
+
+/* Above I established what icon was going to be default when loading the page. as when the page is loaded, the audio will be unmuted, I chose to use the mute icon which
+displays that the audio id playing. it is also convention that this is the type of icon which is shown when audio is playing. */
+
+#fullButton{
+  background-image: url('./icons/fullScreen.svg');
+}
+
+/* I chose this icon to show on the fullscreen button as it is the most fitting icon for what the button does, being making in the video fullscreen. */
+
+.video-progress-bar{
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
+  /* These two lines above create a margin at the top and button of the progress bar to seperate it from the video player. this means that the user is unable to accidently
+  click the video player when trying toe seek through the video which would pause the playback. */
+  margin-left: 1rem;
+  margin-right: 1rem;
+  /* these two lines above creating a serperation on the left and right so that the buttons and progress bar are not right next to eachother. I chose to do this so that
+  the user cannot accidently clicked a button when trying to seek through the video. */
+  height: 0.5rem;
+  /* I chose to make the height of the bar only half as tall as the buttons so due to more conventions found on ohter video play sites. making the bar thinner also creates
+  a less cluttered feel. */
+  flex-grow: 1;
+  cursor: pointer;
+  background-color: var(--col-02);
+  box-shadow: 0 1px 2px var(--col-05) inset;
+  /* This sets the background colour of the progress bar to white with an inset shadow. This shadow allows me to use this white colour while the shadow makes a clear border
+  on the background. */
+}
+::-moz-progress-bar {
+  background-color: var(--col-01);
+}
+/* this sets the progress bar to change colour to red for sections of the timeline which have played. this is a convention and colour inspired by youtube which is also 
+respected in the colour of the buttons when they are clicked.  */
+
+::-webkit-progress-bar {
+  background-color: var(--col-02);
+  box-shadow: 0 1px 2px var(--col-05) inset;
+    /* This sets the background colour of the progress bar to white with an inset shadow. This shadow allows me to use this white colour while the shadow makes a clear border
+  on the background. */
+
+}
+::-webkit-progress-value {
+  background-color: var(--col-01);
+}
+/* this sets the progress bar to change colour to red for sections of the timeline which have played. this is a convention and colour inspired by youtube which is also 
+respected in the colour of the buttons when they are clicked.  */
+
+.timeline-loading{
+  background-image: -moz-repeating-linear-gradient(45deg, var(--col-02) 0% 2%, transparent 2% 4%, var(--col-01) 4%);
+  background-size: 200% 100%;
+  animation: loadingAnimation 4s linear infinite;
+}
+/* These is code which shows a loading bar for sections of the timeline which are loading after the user has seeked futher ahead. I chose to use a red angled design
+to keep in line with the rest of the colours and themeing found in the rest of the progress bar. */
+
+@keyframes loadingAnimation {
+  100%{
+    background-position: 50% 0%;
+  }
+}

@@ -1,21 +1,52 @@
 <!DOCTYPE html>
 
 <html lang="en">
+ 
+  <head>
 
-    <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Player Experiment</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="playerControls.js" defer></script>
 
-        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
 
-        <link rel="stylesheet" href="style.css">
+  <body>
 
-        <script src="script.js"></script>
+    <!-- this element holds all of the media player -->
+    <div class="video-player-wrapper">
+      <!-- this element holds the video element and the overlay -->
+      <div class="video-element-wrapper">
 
-    </head>
+        <video id="videoElement" controls>
+          <source src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4" type="video/mp4">
+        </video>
 
-    <body>
+        <img id="videoPlayOverlay" src="./icons/play.svg">
 
-        <h1>This is my boilerplate</h1>
+      </div>
+      <!-- this element holds all of the custom controls -->
+      <div class="video-controls-wrapper" id="controlsWrapper">
 
-    </body>
+        <button class="video-control-button" id="playButton"></button>
+        <button class="video-control-button" id="muteButton"></button>
+        <progress class="video-progress-bar" id="progressBar" value="0"></progress>
+        <button class="video-control-button" id="fullButton"></button>
+        <!--
+        BUTTON AND ELEMENT ORDERING  
+        above you can see some aditional buttons in the code as well as a change in order for these elements. Firstly we have the elements in the order of play button,
+        mute button, video progress bar and finally the fullscreen. I chose to order these as such to best mimic standard placement for these icons on sites such as youtube
+        vinemo and other streaming services. to change the odering i simply moved each element below or above eachother in the order i wanted them to apear from left to right.
+      
+        WHY I CHOSE FULLSCREEN
+        I chose to add the fullscreen button as my additionall function as I believe it is an important fuction to have in a video player. the most important features to me
+        are the ability pause, play mute and unmute as well as seeking in the video and fullscreen. since these were already implimented, I chose to add fullscreen as it was
+        the last function i believe was essential. following this i beileve that the abilty to skip forward and backward are also important but this can also be done by
+        seeking in the timeline, where as there is not a way to make the video fullscreen without this function.-->
+      </div>
+
+    </div>
+
+  </body>
 
 </html>
