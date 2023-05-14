@@ -1,0 +1,43 @@
+p {
+    font-size: 20px;
+}
+
+.growbutton {
+    border-radius: 20px;
+    padding: 0.25%;
+    margin: auto;
+    display: inline-block;
+}
+
+.growbutton:hover {
+    background-color: grey; 
+}
+
+.growbutton:active {
+    background: lightgrey;
+}
+
+.shrinkbutton {
+    border-radius: 20px;
+    padding: 0.25%;
+    margin: auto;
+    display: inline-block;
+}
+
+.shrinkbutton:hover {
+    background-color: grey; 
+}
+
+.shrinkbutton:active {
+    background: lightgrey;
+}
+
+.growcl {
+    font-size: 500px;
+    transition: 50s;
+}
+
+.shrinkcl {
+    font-size: 20px;
+    transition: 5s;
+}
