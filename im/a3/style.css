@@ -1,0 +1,95 @@
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#growButton {
+    font-size: 25px;
+    border-radius: 20px;
+    padding: 0.25%;
+    margin: auto;
+    display: inline-block;
+  }
+
+/* This is styling to set the size and shape of the grow button id */
+
+  .growbutton {
+    border-radius: 20px;
+    padding: 0.25%;
+    margin: auto;
+    display: inline-block;
+}
+
+/* This is styling to set the size and shape of the grow button class */
+
+.growbutton:hover {
+    background-color: rgb(174, 174, 174); 
+}
+
+/* This sets the background color of the button to change when it is hovered over. */
+
+.growbutton:active {
+    background: lightgrey;
+}
+
+/* This sets the background color of the button when it is clicked. */
+
+#shrinkButton {
+    display: none;
+  }
+
+/* This sets the display of the shrink button to not show upon loading the site so it can later be revealed when a later function is run. */
+
+.shrinkbutton {
+    font-size: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+    padding: 5%;
+    display: none;
+}
+
+/* This is styling to set the size, shape and movement properties of the shrink button id. */
+
+.shrinkbutton {
+    border-radius: 20px;
+    padding: 0.25%;
+    margin: auto;
+    display: inline-block;
+}
+
+/* This is styling to set the shape and padding of the shrink button */
+
+.shrinkbutton:hover {
+    background-color: rgb(174, 174, 174); 
+}
+
+/* This sets the background color of the button to change when it is hovered over. */
+
+.shrinkbutton:active {
+    background: lightgrey;
+}
+
+/* This sets the background color of the button when it is clicked. */
+
+.title {
+    font-size: 50px;
+} 
+
+/* This is setting the original size of the title so it can be increased upon a function running. */
+
+#explanationText {
+    font-size: 18px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+/* This is setting the text size as well as padding so it apears corrently and centered for the explanation text. */
+
+.textid{
+    transition:all 1s;
+    font-size: 20px;
+}
+
+/* This is setting the transittion time and original text size of the text which grows on the site. */
